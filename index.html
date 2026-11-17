@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBible | Bible Study</title>
+    <link rel="stylesheet" href="style.css">
+    <style>body.auth-pending .app-layout,body.auth-pending .topbar{visibility:hidden}</style>
+    <script>document.documentElement.classList.add("auth-loading");</script>
+</head>
+
+<body class="auth-pending">
+
+<!-- TOP NAVIGATION -->
+<header class="topbar">
+    <a href="#home" class="logo">
+        <span class="logo-icon">✝</span>
+        <span>MyBible <small>STUDY</small></span>
+    </a>
+
+    <nav class="topnav">
+        <a href="#home" data-page="home">Home</a>
+        <a href="#books" data-page="books">Bible Books</a>
+        <a href="#chapters/GEN" data-page="chapters">Chapters</a>
+        <a href="#read/GEN/1" data-page="read">Read Bible</a>
+    </nav>
+
+    <div class="account-actions"><span class="version-badge">KJV VERSION</span><span id="accountEmail" class="account-email"></span><button id="logoutButton" class="logout-button" type="button">Log out</button></div>
+</header>
+
+<!-- THREE COLUMN LAYOUT -->
+<div class="app-layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-title">BIBLE LIBRARY</div>
+
+        <nav class="sidebar-menu">
+            <a href="#home" class="menu-item" data-page="home">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="#books" class="menu-item" data-page="books">
+                <span>▤</span> Bible Books
+            </a>
+
+            <a href="#chapters/GEN" class="menu-item" data-page="chapters">
+                <span>▦</span> Chapters
+            </a>
+
+            <a href="#read/GEN/1" class="menu-item" data-page="read">
+                <span>◈</span> Bible Reader
+            </a>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-title">QUICK READING</div>
+
+        <form id="quickForm" class="quick-form">
+            <label for="quickBook">Bible Book</label>
+
+            <select id="quickBook" required>
+                <option value="">Loading books...</option>
+            </select>
+
+            <label for="quickChapter">Chapter</label>
+
+            <input
+                type="number"
+                id="quickChapter"
+                value="1"
+                min="1"
+                max="150"
+                required
+            >
+
+            <button type="submit" class="sidebar-button">
+                Open Scripture →
+            </button>
+        </form>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-title">QUICK ACCESS</div>
+
+        <div class="sidebar-menu">
+            <a href="#read/GEN/1" class="menu-item">
+                <span>✦</span> Genesis 1
+            </a>
+
+            <a href="#read/PSA/23" class="menu-item">
+                <span>✦</span> Psalm 23
+            </a>
+
+            <a href="#read/JHN/3" class="menu-item">
+                <span>✦</span> John 3
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            THE WORD OF GOD
+            <p>Read. Reflect. Grow.</p>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HOME PAGE -->
+        <section id="homePage" class="page">
+
+            <div class="welcome-section">
+
+                <div class="welcome-text">
+                    <span class="eyebrow">
+                        YOUR PERSONAL BIBLE STUDY SPACE
+                    </span>
+
+                    <h1>
+                        Explore the Word.<br>
+                        <span>Grow in Faith.</span>
+                    </h1>
+
+                    <p>
+                        Discover Scripture, explore Bible books,
+                        and spend meaningful time studying
+                        God's Word.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#books" class="primary-button">
+                            Explore Bible Books →
+                        </a>
+
+                        <a href="#read/GEN/1" class="outline-button">
+                            Start Reading
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="art-circle">
+                        <span>✝</span>
+                        <div class="art-book">📖</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <section class="featured-verse">
+                <div class="featured-header">
+                    <span class="eyebrow">FEATURED SCRIPTURE</span>
+                    <span class="featured-label">
+                        KING JAMES VERSION
+                    </span>
+                </div>
+
+                <div class="quote-mark">“</div>
+
+                <blockquote>
+                    For God so loved the world, that he gave
+                    his only begotten Son, that whosoever
+                    believeth in him should not perish,
+                    but have everlasting life.
+                </blockquote>
+
+                <a href="#read/JHN/3" class="verse-reference">
+                    JOHN 3:16 →
+                </a>
+            </section>
+
+            <div class="home-section-title">
+                <span class="eyebrow">BEGIN YOUR JOURNEY</span>
+                <h2>Explore the Scriptures</h2>
+            </div>
+
+            <div class="feature-grid">
+                <a href="#books" class="feature-card">
+                    <span class="feature-icon">▤</span>
+                    <h3>Bible Books</h3>
+                    <p>
+                        Explore all 66 books of the
+                        Old and New Testaments.
+                    </p>
+                    <span class="feature-link">Explore →</span>
+                </a>
+
+                <a href="#chapters/GEN" class="feature-card">
+                    <span class="feature-icon">▦</span>
+                    <h3>Bible Chapters</h3>
+                    <p>
+                        Browse chapters and choose
+                        your next reading.
+                    </p>
+                    <span class="feature-link">Browse →</span>
+                </a>
+
+                <a href="#read/GEN/1" class="feature-card">
+                    <span class="feature-icon">◈</span>
+                    <h3>Bible Reader</h3>
+                    <p>
+                        Read the King James Version
+                        with a focused interface.
+                    </p>
+                    <span class="feature-link">Read →</span>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- BOOKS PAGE -->
+        <section id="booksPage" class="page" hidden>
+
+            <div class="page-heading">
+                <span class="eyebrow">BIBLE LIBRARY</span>
+                <h1>Books of the Bible</h1>
+                <p>
+                    Choose a book to explore its chapters.
+                </p>
+            </div>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="bookSearch"
+                    placeholder="Search Genesis, John, Psalms..."
+                >
+            </div>
+
+            <div class="section-heading">
+                <h2>Old & New Testament</h2>
+                <span id="bookCount">66 Books</span>
+            </div>
+
+            <div id="booksGrid" class="book-grid"></div>
+
+        </section>
+
+        <!-- CHAPTERS PAGE -->
+        <section id="chaptersPage" class="page" hidden>
+
+            <div class="page-heading">
+                <a href="#books" class="back-link">
+                    ← Bible Books
+                </a>
+
+                <span class="eyebrow">BIBLE CHAPTERS</span>
+                <h1 id="chapterBookName">Genesis</h1>
+
+                <p>Select a chapter to begin reading.</p>
+            </div>
+
+            <div class="chapter-summary">
+                <div>
+                    <span class="eyebrow">SELECTED BOOK</span>
+                    <h2 id="chapterBookTitle">Genesis</h2>
+                </div>
+
+                <span id="chapterCount" class="chapter-count">
+                    Loading...
+                </span>
+            </div>
+
+            <div id="chaptersGrid" class="chapter-grid"></div>
+
+        </section>
+
+        <!-- VERSE READER PAGE -->
+        <section id="readerPage" class="page" hidden>
+
+            <div class="reader-heading">
+                <span class="eyebrow">THE HOLY BIBLE · KJV</span>
+
+                <h1 id="readingBook">Genesis</h1>
+                <p id="readingChapter">Chapter 1</p>
+
+                <div class="reader-navigation">
+                    <a id="prevChapter" href="#read/GEN/1">
+                        ← Previous
+                    </a>
+
+                    <a id="chapterListLink" href="#chapters/GEN">
+                        All Chapters
+                    </a>
+
+                    <a id="nextChapter" href="#read/GEN/2">
+                        Next →
+                    </a>
+                </div>
+            </div>
+
+            <p class="reader-hint">
+                Select a verse to view it in the Study Panel.
+            </p>
+
+            <article id="verseList" class="verse-list"></article>
+
+            <div class="reader-bottom">
+                <a id="backToChapters" href="#chapters/GEN">
+                    ← Chapter List
+                </a>
+
+                <a href="#books">Browse Books →</a>
+            </div>
+
+        </section>
+
+        <!-- LOADING & ERROR MESSAGE -->
+        <div id="statusMessage"
+             class="status-message"
+             role="status"
+             aria-live="polite"
+             hidden>
+        </div>
+
+    </main>
+
+    <!-- RIGHT STUDY PANEL -->
+    <aside class="right-panel">
+
+        <div class="panel-heading">
+            <span>STUDY PANEL</span>
+            <span class="panel-dot"></span>
+        </div>
+
+        <div class="daily-card">
+            <span class="eyebrow">SELECTED SCRIPTURE</span>
+
+            <h3 id="selectedReference">MyBible Study</h3>
+
+            <p id="selectedVerse">
+                Select a Bible book, chapter, and verse
+                to begin exploring Scripture.
+            </p>
+        </div>
+
+        <section class="right-section">
+            <h4>READING TOOLS</h4>
+
+            <button id="copyVerse" class="tool-button" disabled>
+                ⧉ Copy Selected Verse
+            </button>
+
+            <button id="increaseFont" class="tool-button">
+                A+ Increase Text Size
+            </button>
+
+            <button id="decreaseFont" class="tool-button">
+                A− Decrease Text Size
+            </button>
+        </section>
+
+        <section class="right-section">
+            <h4>QUICK ACCESS</h4>
+
+            <a href="#read/GEN/1" class="quick-link">
+                <span>📖</span>
+                <div>
+                    <strong>Genesis 1</strong>
+                    <small>The Beginning</small>
+                </div>
+                <span class="quick-arrow">›</span>
+            </a>
+
+            <a href="#read/PSA/23" class="quick-link">
+                <span>✦</span>
+                <div>
+                    <strong>Psalm 23</strong>
+                    <small>The Lord Is My Shepherd</small>
+                </div>
+                <span class="quick-arrow">›</span>
+            </a>
+
+            <a href="#read/JHN/3" class="quick-link">
+                <span>♡</span>
+                <div>
+                    <strong>John 3</strong>
+                    <small>God's Love</small>
+                </div>
+                <span class="quick-arrow">›</span>
+            </a>
+        </section>
+
+        <section class="right-section">
+            <h4>ABOUT MYBIBLE</h4>
+
+            <p class="about-text">
+                Developed by: 
+                <br>Merry Nor Villabona</br>
+
+            </p>
+        </section>
+
+    </aside>
+
+</div>
+
+<script>
+"use strict";
+
+// ========================================
+// MYBIBLE JAVASCRIPT
+// Reads output from the ORIGINAL PHP files.
+// No changes to those PHP files are needed.
+// ========================================
+
+const $ = id => document.getElementById(id);
+
+let books = [];
+let currentBook = null;
+let currentChapter = 1;
+let currentChapterCount = null;
+let selectedVerse = "";
+let fontSize = 17;
+let requestNumber = 0;
+
+// Convert PHP's <br> output into readable lines.
+function getPlainText(html) {
+    const doc = new DOMParser().parseFromString(
+        html,
+        "text/html"
+    );
+
+    doc.querySelectorAll("br").forEach(br => {
+        br.replaceWith("\n");
+    });
+
+    doc.querySelectorAll("p,h1,h2,h3").forEach(el => {
+        el.append("\n");
+    });
+
+    return doc.body.textContent || "";
+}
+
+// Request an existing PHP page.
+async function getPhpOutput(url) {
+    const response = await fetch(url, {
+        cache: "no-store"
+    });
+
+    if (!response.ok) {
+        throw new Error(
+            "Server error: HTTP " + response.status
+        );
+    }
+
+    return await response.text();
+}
+
+// Show status or error.
+function showStatus(message, isError = false) {
+    const box = $("statusMessage");
+
+    box.hidden = false;
+    box.textContent = message;
+    box.classList.toggle("error", isError);
+}
+
+function hideStatus() {
+    $("statusMessage").hidden = true;
+}
+
+// ========================================
+// GET BOOKS FROM bible.php
+// ========================================
+
+async function loadBooks() {
+    if (books.length) return books;
+
+    const html = await getPhpOutput("bible.php");
+    const text = getPlainText(html);
+
+    const regex =
+        /ID:\s*([A-Z0-9]+)\s*\n\s*Book Name:\s*([^\n]+)/gi;
+
+    const result = [];
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+        result.push({
+            id: match[1].toUpperCase(),
+            name: match[2].trim()
+        });
+    }
+
+    if (!result.length) {
+        throw new Error(
+            "Cannot read the Bible books from bible.php. " +
+            text.trim().slice(0, 180)
+        );
+    }
+
+    books = result;
+
+    // Populate the book selector.
+    const select = $("quickBook");
+    select.replaceChildren();
+
+    books.forEach(book => {
+        const option = document.createElement("option");
+        option.value = book.id;
+        option.textContent = book.name;
+        select.append(option);
+    });
+
+    return books;
+}
+
+// Find book by ID or name.
+function findBook(value) {
+    const query = String(value).toLowerCase();
+
+    return books.find(book =>
+        book.id.toLowerCase() === query ||
+        book.name.toLowerCase() === query
+    );
+}
+
+// ========================================
+// DISPLAY BIBLE BOOK CARDS
+// ========================================
+
+function displayBooks() {
+    const grid = $("booksGrid");
+    const keyword = $("bookSearch").value
+        .toLowerCase()
+        .trim();
+
+    grid.replaceChildren();
+
+    let visibleCount = 0;
+
+    books.forEach((book, index) => {
+        if (
+            !book.name.toLowerCase().includes(keyword) &&
+            !book.id.toLowerCase().includes(keyword)
+        ) {
+            return;
+        }
+
+        visibleCount++;
+
+        const card = document.createElement("a");
+        card.className = "book-card";
+        card.href = "#chapters/" + book.id;
+
+        const top = document.createElement("div");
+        top.className = "book-card-top";
+
+        const number = document.createElement("span");
+        number.className = "book-number";
+        number.textContent = String(index + 1).padStart(2, "0");
+
+        const arrow = document.createElement("span");
+        arrow.className = "book-arrow";
+        arrow.textContent = "↗";
+
+        top.append(number, arrow);
+
+        const icon = document.createElement("div");
+        icon.className = "book-icon";
+        icon.textContent = "✝";
+
+        const title = document.createElement("h3");
+        title.textContent = book.name;
+
+        const testament = document.createElement("span");
+        testament.className = "book-testament";
+        testament.textContent = index < 39
+            ? "OLD TESTAMENT"
+            : "NEW TESTAMENT";
+
+        card.append(top, icon, title, testament);
+        grid.append(card);
+    });
+
+    $("bookCount").textContent =
+        visibleCount + " Books";
+}
+
+// ========================================
+// GET CHAPTERS FROM chapters.php
+// ========================================
+
+async function loadChapters(bookId) {
+    const html = await getPhpOutput(
+        "chapters.php?book=" +
+        encodeURIComponent(bookId)
+    );
+
+    const text = getPlainText(html);
+    const regex = /Chapter:\s*(\d+)/gi;
+
+    const chapters = [];
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+        const number = Number(match[1]);
+
+        if (!chapters.includes(number)) {
+            chapters.push(number);
+        }
+    }
+
+    if (!chapters.length) {
+        throw new Error(
+            "No chapter list found. " +
+            text.trim().slice(0, 180)
+        );
+    }
+
+    return chapters;
+}
+
+// Display chapter cards.
+async function displayChapters(bookId, token) {
+    const book = findBook(bookId);
+
+    if (!book) {
+        throw new Error("Bible book not found.");
+    }
+
+    currentBook = book;
+
+    $("chapterBookName").textContent = book.name;
+    $("chapterBookTitle").textContent = book.name;
+    $("chaptersGrid").replaceChildren();
+
+    showStatus("Loading chapters...");
+
+    const chapters = await loadChapters(book.id);
+
+    if (token !== requestNumber) return;
+
+    hideStatus();
+    currentChapterCount = chapters.length;
+
+    $("chapterCount").textContent =
+        chapters.length + " Chapters";
+
+    chapters.forEach(number => {
+        const card = document.createElement("a");
+        card.className = "chapter-card";
+        card.href = "#read/" + book.id + "/" + number;
+
+        const label = document.createElement("span");
+        label.className = "chapter-label";
+        label.textContent = "CHAPTER";
+
+        const title = document.createElement("strong");
+        title.textContent = number;
+
+        const action = document.createElement("span");
+        action.className = "chapter-open";
+        action.textContent = "Read →";
+
+        card.append(label, title, action);
+        $("chaptersGrid").append(card);
+    });
+}
+
+// ========================================
+// GET VERSES FROM verse.php
+// ========================================
+
+async function loadVerses(bookName, chapter) {
+    // Your verse.php expects a book name.
+    // Example: Genesis, John, Revelation.
+    const url =
+        "verse.php?book=" +
+        encodeURIComponent(bookName) +
+        "&chapter=" +
+        encodeURIComponent(chapter);
+
+    const html = await getPhpOutput(url);
+
+    // Your original verse.php echoes <h2> and <p>.
+    const doc = new DOMParser().parseFromString(
+        html,
+        "text/html"
+    );
+
+    const verses = [];
+
+    doc.querySelectorAll("p").forEach(p => {
+        const strong = p.querySelector("strong");
+
+        if (!strong) return;
+
+        const number = strong.textContent.trim();
+
+        if (!/^\d+$/.test(number)) return;
+
+        const text = p.textContent
+            .trim()
+            .replace(/^\d+\s*/, "")
+            .trim();
+
+        verses.push({
+            number: Number(number),
+            text: text
+        });
+    });
+
+    if (!verses.length) {
+        throw new Error(
+            "No verses found. " +
+            getPlainText(html).trim().slice(0, 180)
+        );
+    }
+
+    return verses;
+}
+
+// Display the selected verse in the study panel.
+function selectVerse(button, book, chapter, verse) {
+    document.querySelectorAll(".scripture-verse")
+        .forEach(item => {
+            item.classList.remove("selected");
+            item.setAttribute("aria-pressed", "false");
+        });
+
+    button.classList.add("selected");
+    button.setAttribute("aria-pressed", "true");
+
+    const reference =
+        book.name + " " + chapter + ":" + verse.number;
+
+    $("selectedReference").textContent = reference;
+    $("selectedVerse").textContent = verse.text;
+
+    selectedVerse = reference + " — " + verse.text;
+
+    $("copyVerse").disabled = false;
+}
+
+// Display verses.
+async function displayVerses(bookId, chapter, token) {
+    const book = findBook(bookId);
+
+    if (!book) {
+        throw new Error("Bible book not found.");
+    }
+
+    if (
+        !Number.isInteger(chapter) ||
+        chapter < 1 ||
+        chapter > 150
+    ) {
+        throw new Error("Invalid chapter.");
+    }
+
+    currentBook = book;
+    currentChapter = chapter;
+
+    $("readingBook").textContent = book.name;
+    $("readingChapter").textContent =
+        "Chapter " + chapter;
+
+    $("verseList").replaceChildren();
+
+    $("selectedReference").textContent =
+        book.name + " " + chapter;
+
+    $("selectedVerse").textContent =
+        "Select a verse to view its text here.";
+
+    selectedVerse = "";
+    $("copyVerse").disabled = true;
+
+    $("chapterListLink").href =
+        "#chapters/" + book.id;
+
+    $("backToChapters").href =
+        "#chapters/" + book.id;
+
+    $("prevChapter").hidden = chapter <= 1;
+
+    $("prevChapter").href =
+        "#read/" + book.id + "/" + (chapter - 1);
+
+    $("nextChapter").href =
+        "#read/" + book.id + "/" + (chapter + 1);
+
+    $("nextChapter").hidden = true;
+
+    showStatus("Loading Bible verses...");
+
+    // Load verses and the chapter count.
+    const [verses, chapters] = await Promise.all([
+        loadVerses(book.name, chapter),
+        loadChapters(book.id)
+    ]);
+
+    if (token !== requestNumber) return;
+
+    hideStatus();
+
+    currentChapterCount = chapters.length;
+
+    $("nextChapter").hidden =
+        chapter >= Math.max(...chapters);
+
+    verses.forEach(verse => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "scripture-verse";
+        button.setAttribute("aria-pressed", "false");
+
+        const number = document.createElement("span");
+        number.className = "scripture-number";
+        number.textContent = verse.number;
+
+        const text = document.createElement("span");
+        text.className = "scripture-text";
+        text.textContent = verse.text;
+
+        button.append(number, text);
+
+        button.addEventListener("click", () => {
+            selectVerse(button, book, chapter, verse);
+        });
+
+        $("verseList").append(button);
+    });
+
+    if ($("verseList").firstElementChild) {
+        $("verseList").firstElementChild.click();
+    }
+}
+
+// ========================================
+// PAGE NAVIGATION
+// ========================================
+
+function showPage(pageName) {
+    const pages = {
+        home: "homePage",
+        books: "booksPage",
+        chapters: "chaptersPage",
+        read: "readerPage"
+    };
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.hidden = true;
+    });
+
+    $(pages[pageName]).hidden = false;
+
+    document.querySelectorAll("[data-page]").forEach(link => {
+        link.classList.toggle(
+            "active",
+            link.dataset.page === pageName
+        );
+    });
+
+    window.scrollTo(0, 0);
+}
+
+async function navigate() {
+    const token = ++requestNumber;
+    const parts = location.hash
+        .replace(/^#/, "")
+        .split("/");
+
+    const page = parts[0] || "home";
+
+    hideStatus();
+
+    if (page === "home") {
+        showPage("home");
+        return;
+    }
+
+    if (!["books", "chapters", "read"].includes(page)) {
+        showPage("home");
+        return;
+    }
+
+    showPage(page);
+    showStatus("Loading Bible data...");
+
+    try {
+        await loadBooks();
+
+        if (token !== requestNumber) return;
+
+        if (page === "books") {
+            displayBooks();
+            hideStatus();
+        }
+
+        if (page === "chapters") {
+            await displayChapters(
+                parts[1] || "GEN",
+                token
+            );
+        }
+
+        if (page === "read") {
+            await displayVerses(
+                parts[1] || "GEN",
+                Number(parts[2] || 1),
+                token
+            );
+        }
+
+    } catch (error) {
+        if (token === requestNumber) {
+            showStatus(error.message, true);
+        }
+    }
+}
+
+// ========================================
+// USER INTERACTIONS
+// ========================================
+
+// Filter Bible books.
+$("bookSearch").addEventListener("input", displayBooks);
+
+// Submit quick Bible reference.
+$("quickForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const bookId = $("quickBook").value;
+    const chapter = Number($("quickChapter").value);
+
+    if (!bookId || !Number.isInteger(chapter) ||
+        chapter < 1 || chapter > 150) {
+        return;
+    }
+
+    location.hash =
+        "#read/" + bookId + "/" + chapter;
+});
+
+// Copy selected verse.
+$("copyVerse").addEventListener("click", async () => {
+    if (!selectedVerse) return;
+
+    try {
+        await navigator.clipboard.writeText(selectedVerse);
+
+        $("copyVerse").textContent = "✓ Verse Copied!";
+
+        setTimeout(() => {
+            $("copyVerse").textContent =
+                "⧉ Copy Selected Verse";
+        }, 1500);
+
+    } catch (error) {
+        window.prompt("Copy this verse:", selectedVerse);
+    }
+});
+
+// Text size controls.
+function changeFont(amount) {
+    fontSize = Math.max(
+        14,
+        Math.min(26, fontSize + amount)
+    );
+
+    document.documentElement.style.setProperty(
+        "--reading-font",
+        fontSize + "px"
+    );
+}
+
+$("increaseFont").addEventListener("click", () => {
+    changeFont(1);
+});
+
+$("decreaseFont").addEventListener("click", () => {
+    changeFont(-1);
+});
+
+// Start application.
+window.addEventListener("hashchange", navigate);
+
+// Load books for the quick selector on the home page.
+loadBooks().catch(() => {
+    $("quickBook").replaceChildren();
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "Books unavailable";
+    $("quickBook").append(option);
+});
+
+navigate();
+</script>
+
+<script type="module" src="dashboard-auth.js"></script>
+</body>
+</html>
